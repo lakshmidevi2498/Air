@@ -13,7 +13,7 @@ const EmailValidationComponent = ({data ,error,setError,handlePhoneChange,setSig
         const isPasswordValid = validatePassword(data.password);
     
         if (isEmailValid && isPasswordValid) {
-          // console.log(data.email,"and", data.password);
+          console.log(data.email,"and", data.password);
          dispatch(emailLoginInitiate(data.email,data.password,navigate))
         }
       };
@@ -21,20 +21,23 @@ const EmailValidationComponent = ({data ,error,setError,handlePhoneChange,setSig
         const emailformat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!email.match(emailformat)) {
             setError(prevState=> ({...prevState ,emailError:true}))
-       
+        //   setEmailError(true);
           return false;
         } else {
-            setError(prevState=> ({...prevState ,emailError:false})) 
+            setError(prevState=> ({...prevState ,emailError:false}))
+        //   setEmailError(false);
           return true;
         }
       };
     
       const validatePassword = (password) => {
-        if (password.length < 6) { 
+        if (password.length < 6) {
+        //   setPasswordError(true);
         setError(prevState=> ({...prevState ,passwordError:true}))
         
           return false;
-        } else { 
+        } else {
+        //   setPasswordError(false);
         setError(prevState=> ({...prevState ,passwordError:false}))
 
           return true;

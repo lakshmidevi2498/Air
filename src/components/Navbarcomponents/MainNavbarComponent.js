@@ -66,18 +66,18 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
   const handleSearch = useCallback((event) => {
     setData(prevState => ({ ...prevState, visible: true, countryOpen: true, focus: true, }));
     setAnchorE1(event.currentTarget);
-    // console.log("focus in handleSearch", data.focus);
-    // console.log("visible in handleSearch", data.visible);
-    // console.log("countryOpen in handleSearch", data.countryOpen);
-    // console.log("data in handleSearch", data);
+    console.log("focus in handleSearch", data.focus);
+    console.log("visible in handleSearch", data.visible);
+    console.log("countryOpen in handleSearch", data.countryOpen);
+    console.log("data in handleSearch", data);
   }, []);
   useEffect(() => {
-    // console.log("data in useEffect", data);
+    console.log("data in useEffect", data);
   }, [data])
 
   const handleSendCountryChild = useCallback((data) => {
     setData(prevState => ({ ...prevState, selectedCountry: data}))
-    // console.log("selectedCountry in handleSendCountryChild", data.selectedCountry)
+    console.log("selectedCountry in handleSendCountryChild", data.selectedCountry)
     handleSendCountryparent(data)
   }, [])
   const handleCheckIn = useCallback(() => {
@@ -100,12 +100,12 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
     if (guestRef.current) {
       setData(prevState => ({ ...prevState, guestAnchorEl: guestRef.current, guest: true, search: true, }));
     }
-    // console.log("guest in handleSearchDestination", state.guest);
-    // console.log("guestAnchorEl in handleSearchDestination", state.guestAnchorEl);
+    console.log("guest in handleSearchDestination", state.guest);
+    console.log("guestAnchorEl in handleSearchDestination", state.guestAnchorEl);
   }, []);
   const handleMonths = useCallback(() => {
     setData(prevState => ({ ...prevState, months: true, monthsUi: true, flexible: false }))
-    // console.log("months", state.months)
+    console.log("months", state.months)
   })
   const handleFlexible = useCallback(() => {
     setData(prevState => ({ ...prevState, monthsUi: false, flexible: true }))
@@ -124,7 +124,7 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
     handleDatesChangeParent(start, end)
     setData(prevState => ({ ...prevState, startDate: start }))
     setData(prevState => ({ ...prevState, endDate: end }))
-    // console.log("starta and end dates", data.startDate, data.endDate)
+    console.log("starta and end dates", data.startDate, data.endDate)
   }, []);
   const handleCloseGuest = () => {
     setData(prevState => ({ ...prevState, guest: false }))
@@ -136,16 +136,16 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
     setData(prevState => ({ ...prevState, visible: false }))
   }, [])
   const handleSendMonthsToChild = useCallback((monthNamesString, selectedMonth) => {
-    // console.log("monthNamesString", monthNamesString)
+    console.log("monthNamesString", monthNamesString)
     setData(prevState => ({ ...prevState, monthStart: monthNamesString }))
     setData(prevState => ({ ...prevState, monthEnd: selectedMonth }))
     handleSendMonthsToParent(monthNamesString, selectedMonth)
-    // console.log("monthstart,monthend", data.monthStart, data.monthEnd);
+    console.log("monthstart,monthend", data.monthStart, data.monthEnd);
   }, [])
   const handleGuestCountInChild = useCallback((data) => {
     handleGuestCountInParent(data)
     setData(prevState => ({ ...prevState, guestCount: data }))
-    // console.log("guestCount in handleGuestCountInChild", data.guestCount);
+    console.log("guestCount in handleGuestCountInChild", data.guestCount);
   }, [data.guestCount])
 
   const handelGuestValueChild = useCallback((value) => {
@@ -176,19 +176,19 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
     const dateEnd = data.endDate ? data.endDate : "";
     const countOne = data.guestCount ? data.guestCount : "";
     const paramDataOne = [countryData, dateStart, dateEnd, countOne];
-    // console.log("paramDataOne---->", paramDataOne);
+    console.log("paramDataOne---->", paramDataOne);
 
     //search two
     const regionData = data.region ? data.region : "";
-    // console.log("regionData in handleSearchNaviagte", data.region, regionData)
+    console.log("regionData in handleSearchNaviagte", data.region, regionData)
     const monthFirst = data.monthStart ? data.monthStart : "";
-    // console.log("monthFirst", data.monthStart, monthFirst);
+    console.log("monthFirst", data.monthStart, monthFirst);
     const monthLast = data.monthEnd ? data.monthEnd : "";
-    // console.log("monthLast in handleSearchNaviagte", data.monthEnd, monthLast)
+    console.log("monthLast in handleSearchNaviagte", data.monthEnd, monthLast)
     const countTwo = data.guestCount ? data.guestCount : "";
-    // console.log("countTwo in handleSearchNaviagte", data.guestCount, countTwo)
+    console.log("countTwo in handleSearchNaviagte", data.guestCount, countTwo)
     const paramDataTwo = [regionData, monthFirst, monthLast, countTwo]
-    // console.log("paramDataTwo----->", paramDataTwo);
+    console.log("paramDataTwo----->", paramDataTwo);
 
     //search third
     const countrydata = data.selectedCountry ? data.selectedCountry : "";
@@ -197,7 +197,7 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
     // const week = weekParam ? weekParam : "";
     const countThree = data.guestCount ? data.guestCount : "";
     const paramDataThree = [countrydata, dateStartThree, dateEndThree, countThree]
-    // console.log(" paramDtaThree", paramDataThree)
+    console.log(" paramDtaThree", paramDataThree)
 
     if (paramDataTwo[0] === "Thailand") {
       navigate(`/search?paramData=${paramDataTwo.join('_')}`)

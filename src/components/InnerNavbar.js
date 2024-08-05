@@ -2,13 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Imports from '../commons/AllImports'
 import UserComponent from './Navbarcomponents/UserComponent';
 import NavAnyComponent from './Navbarcomponents/NavAnyComponent';
-import { useNavigate } from 'react-router-dom';
 
 const InnerNavbar = ({ name, start, end, ghost }) => {
-    const navigate = useNavigate()
-    const handleHome = () => {
-        navigate("/")
-    }
    
     return (
         <>
@@ -19,7 +14,7 @@ const InnerNavbar = ({ name, start, end, ghost }) => {
                             <Imports.Box
                                 component="img"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png"
-                                sx={{ width: "100%", height: "100%" }} onClick={handleHome}
+                                sx={{ width: "100%", height: "100%" }}
                             />
                         </Imports.Grid>
                         <Imports.Grid item xs={4} md={5} lg={4} sx={{ display: "flex", justifyContent: "center", textAlign: "center", alignItems: "center", marginLeft: { xs: "0px", lg: "150px", xl: "150px", xxl: "0px" } }}>
@@ -47,7 +42,7 @@ const InnerNavbar = ({ name, start, end, ghost }) => {
                                     </Imports.Grid>
                                 </Imports.Grid>
                             </Imports.Grid>
-                        </Imports.Grid>
+                        </Imports.Grid>/
                         <UserComponent />
                     </Imports.Grid>
                 </Imports.Grid>

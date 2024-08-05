@@ -4,16 +4,16 @@ const endPoints = "countrydata";
 export const getSearchPlaceApi = async () => { 
   return new Promise(async (resolve, reject) => {
     try {
-      // console.log("this is get call in API---->",endPoints);
+      console.log("this is get call in API---->",endPoints);
       const response = await api.get(`${endPoints}.json`);
-      // console.log("fetched data", response);
+      console.log("fetched data", response);
       if (response && response.data) {
         const fetchedData = Object.keys(response.data).map(key => ({
           id: key,
           ...response.data[key]
         }));
         resolve(fetchedData);
-        // console.log("fetchedData for searchpage",fetchedData)
+        console.log("fetchedData for searchpage",fetchedData)
         return(fetchedData)
       } else {
         resolve([]); 

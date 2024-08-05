@@ -15,8 +15,8 @@ const initialState = {
           loading: true,
         };
       case types.LOAD_PAST_IMAGES_SUCCESS:
-        // console.log("action", action);
-        // console.log("data in reducer", action.payload);
+        console.log("action", action);
+        console.log("data in reducer", action.payload);
         return {
           ...state,
           loading: false,
