@@ -11,7 +11,7 @@ export const mobileLoginStart = (data) =>{
 }
 
 export const mobileLoginSuccess = (data) => {
-  console.log("this is mobileLoginSuccessAction---->" ,data)
+  // console.log("this is mobileLoginSuccessAction---->" ,data)
   return{
   
   type: types.PHONENUMBER_LOGIN_SUCCESS,
@@ -20,7 +20,7 @@ export const mobileLoginSuccess = (data) => {
 };
 
 export const mobileLoginError = (error) => {
-  console.log("this is mobileLoginErrorAction---->" ,error)
+  // console.log("this is mobileLoginErrorAction---->" ,error)
 return{
   type: types.PHONENUMBER_LOGIN_ERROR,
   payload: error,
@@ -28,17 +28,17 @@ return{
 }
 
 export const mobileLoginInitiate = (phoneNumber, ) => {
-  console.log("phonenumber in initiater",phoneNumber)
+  // console.log("phonenumber in initiater",phoneNumber)
   return async (dispatch) => {
     dispatch(mobileLoginStart(phoneNumber));
     try {
       const mobilelogindata = await mobileLoginApi(phoneNumber, 'recaptcha-container');
-      console.log("mobilelogindata--->",mobilelogindata)
+      // console.log("mobilelogindata--->",mobilelogindata)
       dispatch(mobileLoginSuccess(mobilelogindata.apiResponse));
       return mobilelogindata.response;
     } catch (err) {
       dispatch(mobileLoginError(err));
-      console.log('error', err);
+      // console.log('error', err);
     }
   };
 };

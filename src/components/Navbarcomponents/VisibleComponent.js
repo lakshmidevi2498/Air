@@ -4,7 +4,7 @@ import Imports from '../../commons/AllImports';
 const VisibleComponent = React.memo(({  data, handleFocusChange, menuRegionData, handelVisible ,handleCountryOpen}) => {
   const [region, setRegion] = useState('');
 const [countryOpen , setCountryOpen] = useState(true)
-console.log("countryOpen in VisibleComponent",countryOpen)
+// console.log("countryOpen in VisibleComponent",countryOpen)
   const maps = [
     { countryImg: 'https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg?im_w=320', countryName: "I'm flexible" },
     { countryImg: "https://a0.muscache.com/im/pictures/d77de9f5-5318-4571-88c7-e97d2355d20a.jpg?im_w=320", countryName: "Southeast Asia" },
@@ -15,20 +15,20 @@ console.log("countryOpen in VisibleComponent",countryOpen)
   ];
 
   const handleGridClick = useCallback((country) => {
-   console.log("country",country);
-      console.log("vrfrgr",country.countryName); 
+  //  console.log("country",country);
+      // console.log("vrfrgr",country.countryName); 
       const { countryName } = country; 
       setRegion(countryName);
       menuRegionData(countryName)
       handelVisible(false);
       handleFocusChange( false );
       handleCountryOpen(false)
-      console.log("Region set to:", region);
+      // console.log("Region set to:", region);
 
   });
 
   useEffect(() => {
-    console.log("Region updated to:", region);
+    // console.log("Region updated to:", region);
     menuRegionData(region);
   },[]); 
 

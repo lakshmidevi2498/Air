@@ -16,7 +16,7 @@ const CountryDropdown = React.memo(({ handleSendCountry, name, }) => {
 
   const handleChange = useCallback((selectedOption) => {
     setSelectedCountry(selectedOption);
-    console.log("selectedCountry", selectedOption);
+    // console.log("selectedCountry", selectedOption);
     handleSendCountry(selectedOption);
   },[selectedCountry]);
 
@@ -94,7 +94,7 @@ const CountryDropdown = React.memo(({ handleSendCountry, name, }) => {
     }),
   };
 
-  console.log("selectedCountry in dropdown--->", selectedCountry); 
+  // console.log("selectedCountry in dropdown--->", selectedCountry); 
 
   return (
     <Grid sx={{ maxHeight: '0px', zIndex: 10, }} 

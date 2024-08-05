@@ -19,7 +19,7 @@ const AccordionInMobile = React.memo(({setSelectedItem ,handleGuestCountParent})
     guestAnchorEl:null
   });
   const handleAccordainThreeChange = useCallback((event, isExpanded) => {
-    console.log('Accordion isExpanded:', isExpanded);
+    // console.log('Accordion isExpanded:', isExpanded);
     if(guestRef.current){
     setData(prevState => ({  ...prevState,  expandThree: isExpanded,  guestAnchorEl:guestRef.current,  }));
       }
@@ -29,7 +29,7 @@ const AccordionInMobile = React.memo(({setSelectedItem ,handleGuestCountParent})
   },[])
   const handleGuestCountInChild = useCallback((data) => {
     setData(prevState => ({ ...prevState , guestCount:data}))
-    console.log("guestCount",data.guestCount);
+    // console.log("guestCount",data.guestCount);
     handleGuestCountParent(data)
   },[])
     const guestRef = React.useRef(null)

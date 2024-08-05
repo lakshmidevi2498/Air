@@ -1,6 +1,5 @@
 import React from 'react'
 import Imports from '../commons/AllImports'
-import { ChevronRight } from '@mui/icons-material'
 
 const ThingsComponent = () => {
     const data = [
@@ -24,7 +23,7 @@ const ThingsComponent = () => {
                                     <Imports.Typography variant='h1' sx={{ textDecoration: 'underline', fontWeight: 'medium',fontSize:'15px' ,marginTop:"3px"}}>
                                         Showmore
                                     </Imports.Typography>
-                                    <ChevronRight />
+                                    <Imports.ChevronRight />
                                 </Imports.Grid>
                             </Imports.Grid>
                         ))}

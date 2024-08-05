@@ -1,25 +1,16 @@
-import React, { useEffect ,useState } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useEffect ,useState } from "react"; 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import Imports from "../commons/AllImports";
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import StarIcon from '@mui/icons-material/Star';
+import Imports from "../commons/AllImports"; 
 import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import Pagination from '@mui/material/Pagination';
-import { getSearchPlaceInitiate } from '../redux/action/searchPlaceAction';
-import { Grid, Typography, CardMedia, Box, Stack, CardContent,Card, Divider } from '@mui/material';
-import { useMediaQuery, useTheme } from '@mui/material';
+import { useSelector, useDispatch } from "react-redux"; 
+import { getSearchPlaceInitiate } from '../redux/action/searchPlaceAction';  
 import SearchSwiperComponent from "./SearchSwiperComponent";
 
 const SearchComponentInSm = ({ data, error, paramData,name }) => {
     
-    const [ loading,setLoading] = useState(true)
-    const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const [ loading,setLoading] = useState(true) 
     const dispatch = useDispatch()
     const searchImage =useSelector((state) => state.getsearchplacereducer.data || []);
     useEffect(() => {
@@ -91,7 +82,7 @@ const SearchComponentInSm = ({ data, error, paramData,name }) => {
                     ) : null
                      ) : null}               
                 <Imports.Grid container justifyContent={'center'} xs={12} md={8}  sx={{ margin: 'auto',zIndex:"100",padding:{ xs:"10px",},backgroundColor:{xs:"white",sm:"none"},marginTop:{xs:"180px",sm:"0px"},borderRadius:{xs:"10px",sm:"0px"} ,}} >
-                <Divider orientation="horizontal" sx={{marginTop:"20px",width:"40px", borderWidth: "2px"}}/>
+                <Imports.Divider orientation="horizontal" sx={{marginTop:"20px",width:"40px", borderWidth: "2px"}}/>
                     <SearchSwiperComponent filteredData={filteredData}/>
                 </Imports.Grid>
                 </Imports.Grid>

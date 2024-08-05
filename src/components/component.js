@@ -41,7 +41,7 @@ const CircularProgressSlider = React.memo(({ handleDate, handleFlexible, handleS
         const month = Math.floor(value / (100 / 12));
         setSelectedMonth(monthNamesString[month]); // Update selected month text
         handleMonthChange(selectedMonth); // Pass the month to the parent component
-        console.log("Selected month:", monthNamesString[month]); // Log selected month to console
+        // console.log("Selected month:", monthNamesString[month]); // Log selected month to console
         isDraggingRef.current = false;
       }
     };

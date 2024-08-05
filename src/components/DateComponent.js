@@ -37,10 +37,6 @@ const DateComponent = ({ handleMonths, handleFlexible, sendDatesToParent ,}) => 
     { label: '±14days', fontSize: { xs: '10px' }, padding: '5px', paddingX: '3px', border: '1px solid lightgray', display: { xs: 'none', sm: 'block' } }
   ];
 
-  // useEffect(() => {
-  //   sendDatesToParent(start, end);
-  // }, []);
-
   return (
     <>
       <Imports.Grid  container  alignItems="center" justifyContent="center"  item xs={12}  sx={{  width: '100%',  margin: ' auto',  }} >

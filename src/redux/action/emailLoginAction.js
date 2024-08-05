@@ -7,14 +7,14 @@ type:types.EMAILANDPASSWORD_LOGIN_START
 })
 
 export const emailLoginSuccess = (data) => (
-    console.log("this is emailLoginSuccessAction---->" ,),
+    // console.log("this is emailLoginSuccessAction---->" ,),
     {
     type:types.EMAILANDPASSWORD_LOGIN_SUCCESS,
     payload:data
 })
 
 export const emailLoginError = (error) => (
-    console.log("this is emailLoginErrorAction---->" ,error),
+    // console.log("this is emailLoginErrorAction---->" ,error),
     {
     type:types.EMAILANDPASSWORD_LOGIN_ERROR,
     payload:error
@@ -29,7 +29,7 @@ export const emailLoginInitiate = (email,password,navigate) => {
           navigate('/')
   
         } catch (err) {
-          console.log("error",err)
+          // console.log("error",err)
           dispatch(emailLoginError(err))
           toast.error("Email & Password authentication failed")
   

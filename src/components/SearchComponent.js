@@ -1,24 +1,16 @@
-import React, { useEffect ,useState} from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useEffect ,useState} from "react"; 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import StarIcon from '@mui/icons-material/Star';
-import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
-import { getSearchPlaceInitiate } from '../redux/action/searchPlaceAction';
-import { Grid, Typography, CardMedia, Box, Stack, CardContent,Card } from '@mui/material';
-import { useMediaQuery, useTheme } from '@mui/material';
+import 'swiper/css/navigation'; 
+import { useParams } from "react-router-dom"; 
+import { getSearchPlaceInitiate } from '../redux/action/searchPlaceAction';  
 import CircularProgress from '@mui/material/CircularProgress';
 import { useDispatch,useSelector } from "react-redux";
 import SearchSwiperComponent from "./SearchSwiperComponent";
 import SearchComponentMaps from "./SearchComponentMaps";
 import Imports from "../commons/AllImports";
 
-const SearchComponent = ({  paramData,name }) => {
-    const theme = useTheme();
+const SearchComponent = ({  paramData,name }) => { 
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
     const productsData = useSelector((state) => state.getsearchplacereducer.data || []);
