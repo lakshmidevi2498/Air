@@ -16,7 +16,7 @@ export const emailSignupReducer = (state = initialState, action) => {
         error: null,
       };
     case types.EMAILANDPASSWORD_SIGNUP_SUCCESS:
-        console.log("this is emailsignupsuccessreducer----> ");
+        // console.log("this is emailsignupsuccessreducer----> ");
       return {
         ...state,
         data2: action.payload,
@@ -24,7 +24,7 @@ export const emailSignupReducer = (state = initialState, action) => {
         error: null,
       };
     case types.EMAILANDPASSWORD_SIGNUP_ERROR:
-        console.log("this is emailsignuperrorreducer----> ");
+        // console.log("this is emailsignuperrorreducer----> ");
       return {
         ...state,
         loading: false,

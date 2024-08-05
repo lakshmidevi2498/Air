@@ -22,7 +22,7 @@ export const googleLoginApi = async () => {
 
    
     const apiResponse = await api.post(`${endPoints}`, { accessToken, email, displayName });
-    console.log("apiResponse",apiResponse);
+    // console.log("apiResponse",apiResponse);
     if (apiResponse && apiResponse.data) {
       toast.success("googleLogin successful!");
       return apiResponse.data;
