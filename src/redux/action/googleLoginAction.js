@@ -7,7 +7,7 @@ export const googleLoginStart = () => ({
 });
 
 export const googleLoginSuccess = (data) => (
-  // console.log("this is googleLoginSuccessAction---->" ,),
+  console.log("this is googleLoginSuccessAction---->" ,),
   {
   
   type: types.GOOGLE_LOGIN_SUCCESS,
@@ -15,7 +15,7 @@ export const googleLoginSuccess = (data) => (
 });
 
 export const googleLoginError = (error) => (
-  // console.log("this is googleLoginError---->" ,error),
+  console.log("this is googleLoginError---->" ,error),
   {
   type: types.GOOGLE_LOGIN_ERROR,
   payload: error,
@@ -26,7 +26,7 @@ export const googleLoginInitiate = (navigate) => {
     dispatch(googleLoginStart())
     try{
      const userData = await googleLoginApi()
-    //  console.log("userData",userData)
+     console.log("userData",userData)
      dispatch(googleLoginSuccess(userData))
      navigate("/")
     }

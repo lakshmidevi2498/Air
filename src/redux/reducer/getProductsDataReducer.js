@@ -9,7 +9,7 @@ const initialState = {
   };
 
 export const getProductsDataReducer = (state=initialState.productsData,action) => {
-    // console.log("this is getproducts data reducer----->")
+    console.log("this is getproducts data reducer----->")
     switch(action.type){
         case types.LOAD_PRODUCTS_DATA_START :
             return{

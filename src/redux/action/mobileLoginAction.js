@@ -28,17 +28,17 @@ return{
 }
 
 export const mobileLoginInitiate = (phoneNumber, ) => {
-  // console.log("phonenumber in initiater",phoneNumber)
+  console.log("phonenumber in initiater",phoneNumber)
   return async (dispatch) => {
     dispatch(mobileLoginStart(phoneNumber));
     try {
       const mobilelogindata = await mobileLoginApi(phoneNumber, 'recaptcha-container');
-      // console.log("mobilelogindata--->",mobilelogindata)
+      console.log("mobilelogindata--->",mobilelogindata)
       dispatch(mobileLoginSuccess(mobilelogindata.apiResponse));
       return mobilelogindata.response;
     } catch (err) {
       dispatch(mobileLoginError(err));
-      // console.log('error', err);
+      console.log('error', err);
     }
   };
 };

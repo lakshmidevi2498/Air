@@ -1,7 +1,7 @@
 
-import { auth } from "../../firebase/Firebase";
+import { auth,provider } from "../../firebase/Firebase";
 import API from "../../API/API";
-import {  signInWithEmailAndPassword } from "@firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "@firebase/auth";
 import { toast } from 'react-toastify';
 
 const api = new API();
@@ -25,7 +25,7 @@ export const emailLoginApi = async (email, password) => {
 
    
     const apiResponse = await api.post(`${endPoints}`,{email:user.email,accessToken:user.accessToken} );
-//  console.log("apiResponse",apiResponse);
+ console.log("apiResponse",apiResponse);
     if (apiResponse && apiResponse.data) {
       toast.success("emailogin authentication is successful!");
       return apiResponse.data;

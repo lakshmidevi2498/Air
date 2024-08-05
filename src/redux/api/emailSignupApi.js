@@ -28,7 +28,7 @@ export const emailSignupApi = async (email, password) => {
 
    
     const apiResponse = await api.post(`${endPoints}`,{email:user.email,accessToken:user.accessToken} );
-    // console.log("apiResponse",apiResponse);
+    console.log("apiResponse",apiResponse);
     if (apiResponse && apiResponse.data) {
       toast.success("emailSignup successful!");
 

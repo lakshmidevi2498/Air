@@ -17,14 +17,14 @@ export const mobileLoginApi = async (phoneNumber, recaptchaContainerId) => {
 
     await recaptchaVerifier.render();
 
-    // console.log("phoneNumber in api ---->", phoneNumber);
+    console.log("phoneNumber in api ---->", phoneNumber);
     const number = localStorage.setItem("number",phoneNumber.charAt(3))
-    // console.log("phoneNumber in api ---->", phoneNumber.charAt(3));
+    console.log("phoneNumber in api ---->", phoneNumber.charAt(3));
 
     const response = await signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier);
-    // console.log("response", response);
+    console.log("response", response);
     const apiResponse = await api.post(endPoints, { phoneNumber });
-    // console.log("response apiResponse",  apiResponse )
+    console.log("response apiResponse",  apiResponse )
     if (apiResponse && apiResponse.data) {
      
       return { response, apiResponse: apiResponse.data };

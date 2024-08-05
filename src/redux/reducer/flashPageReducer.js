@@ -9,7 +9,7 @@ const initialState = {
   };
 
 export const getFlashPageReducer = (state=initialState.loadFlashData,action) => {
-    // console.log("this is getFlashPageReducer ----->")
+    console.log("this is getFlashPageReducer ----->")
     switch(action.type){
         case types.LOAD_FLASH_PAGE_IMAGES_START :
             return{
