@@ -1,10 +1,12 @@
 
-
+import React ,{useState , useEffect}from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import Imports from '../commons/AllImports';
 
-const LivingAreaComponent = ({setAllImages,}) => {
+const LivingAreaComponent = () => {
+  const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     
     const location = useLocation();
@@ -14,6 +16,11 @@ const LivingAreaComponent = ({setAllImages,}) => {
     console.log("showallimages--->", allImages);
     console.log("innerimages-->",innerImgs)
 
+    useEffect(() => {
+      if (allImages.length > 0) {
+          setLoading(false);
+      }
+  }, [innerImgs]);
     const handleNavigateInnerProductsPage = () => {
         console.log("innerimages in allimages-->",innerImgs)
         navigate('/innerproducts',{state:{innerImgs}});
@@ -28,6 +35,13 @@ const LivingAreaComponent = ({setAllImages,}) => {
     } else if (!location.state.allImages) {
         console.error("location.state.allImages is null or undefined");
     }
+    if (loading) {
+      return (
+          <Imports.Grid container justifyContent="center" alignItems="center" sx={{ minHeight: '100vh' }}>
+              <CircularProgress />
+          </Imports.Grid>
+      );
+  }
 
     return (
         <Imports.Grid container justifyContent='center'>

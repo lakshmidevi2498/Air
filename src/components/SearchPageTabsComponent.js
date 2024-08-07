@@ -12,7 +12,7 @@ const SearchPageTabsComponent = () => {
   return (
   
     <>
-    <Imports.Grid container xs={12} item border={'1px solid lightgray'} sx={{position:"sticky",top:{xs:92,sm:72,md:92,lg:90},zIndex:12001,backgroundColor:"white"}}>
+    <Imports.Grid container xs={12} item border={'1px solid lightgray'} sx={{position:"sticky",top:{xs:92,sm:72,md:92,lg:90},zIndex:5,backgroundColor:"white"}}>
         <Imports.Grid container  alignItems='center' sx={{ margin: 'auto', padding: {xs:"5px",sm:0} }} xs={11} padding='0' >
         
         <Imports.Grid   item xs={12} sm={7} md={7.5} lg={9} sx={{justifyContent:'center' ,alignItems:'center',textAlign:'center',paddingX:{xs:'10px',sm:"30px",md:"35px",lg:"30px"}}} mt={2} >

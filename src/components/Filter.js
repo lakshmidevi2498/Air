@@ -56,7 +56,7 @@ const Filter = () => {
                          <Imports.Grid  item  >
                          <Imports.Dialog  maxWidth="md"  open={open}  onClose={handleClose}  paperprops={{  }}  sx={{marginTop:{xs:"70px",sm:"0px"},}}  > 
                          <Imports.Grid   item  >
-                                 <Imports.DialogTitle sx={{  top:'0', position:"sticky",zIndex:30000 ,backgroundColor:"white",borderBottom:"1px solid lightgray"}}> 
+                                 <Imports.DialogTitle sx={{  top:'0', position:"sticky",zIndex:30 ,backgroundColor:"white",borderBottom:"1px solid lightgray"}}> 
                                      <Imports.Grid container item justifyContent='center'>
                                          <Imports.Grid container item alignItems="center" justifyContent='space-between' display='flex'>
                                             <Imports.Grid item>

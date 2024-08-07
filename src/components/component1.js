@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Select, { components } from 'react-select';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import { allCountries } from 'country-region-data';
-import { Grid } from '@mui/material';
+import { allCountries } from 'country-region-data'; 
+import Imports from '../commons/AllImports';
 
 const CountryDropdown = React.memo(({ handleSendCountry, name, }) => {
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -22,7 +21,7 @@ const CountryDropdown = React.memo(({ handleSendCountry, name, }) => {
 
   const getOptionLabel = (option) => (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <LocationOnOutlinedIcon style={{ marginRight: '5px', backgroundColor: 'lightgray', borderRadius: '5px', padding: '2px' }} />
+      <Imports.LocationOnOutlinedIcon style={{ marginRight: '5px', backgroundColor: 'lightgray', borderRadius: '5px', padding: '2px' }} />
       {option.label}
     </div>
   );
@@ -97,7 +96,7 @@ const CountryDropdown = React.memo(({ handleSendCountry, name, }) => {
   console.log("selectedCountry in dropdown--->", selectedCountry); 
 
   return (
-    <Grid sx={{ maxHeight: '0px', zIndex: 10, }} 
+    <Imports.Grid sx={{   zIndex: 10  }} 
     onClick={(e) => e.stopPropagation()} 
     className='dropdown'>
       <Select
@@ -110,8 +109,9 @@ const CountryDropdown = React.memo(({ handleSendCountry, name, }) => {
         components={{ SingleValue }} 
         placeholder="Search Destination"
         styles={customStyles}
+        // styles={{...customStyles,zIndex: 1000}}
       />
-    </Grid>
+    </Imports.Grid>
   );
 });
 

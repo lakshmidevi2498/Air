@@ -215,7 +215,7 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
       <Imports.Grid item sm={11} md={10.5} lg={8} xl={7} sx={{ display: { xs: 'none', sm: 'block', md: 'block', lg: 'block' }, textAlign: 'center', borderRadius: '50px', border: '2px solid lightgray' }}>
         <Imports.Grid item sx={{ ...getBoxStyles(0), height: '65px', borderRadius: '40px', textAlign: 'left', display: 'flex', alignItems: 'center', justifyContent: 'start', }} xs={12} onMouseEnter={() => setHoveredBox(0)} onMouseLeave={() => setHoveredBox(null)} >
           <Imports.Grid item xs={4} sm={3.5} md={4} height="100%" sx={getBoxStyles(1)} onClick={(event) => { handleSearch(event); handleClick(1); }} onMouseEnter={() => setHoveredBox(1)} onMouseLeave={() => setHoveredBox(null)} >
-            <Imports.Grid display="flex" height="100%" flexDirection="column" alignItems="flex-start" sx={{ padding: { xs: '25px', md: "24px", lg: "24px" }, textAlign: 'start', borderRadius: '40px', }} >
+            <Imports.Grid display="flex" height="100%" flexDirection="column" alignItems="flex-start" sx={{ padding: { xs: '25px', md: "24px", lg: "24px" }, textAlign: 'start', borderRadius: '40px', cursor:"pointer"}} >
               <Imports.Typography variant='body1' sx={{ color: '#000000', textTransform: 'none', fontSize: '11px' }} >Where</Imports.Typography>
               {data.visible ? (<Imports.Typography ></Imports.Typography>) : (<Imports.Typography sx={{ }}>{data.selectedCountry ? (data.selectedCountry) : data.region ? (data.region) : ("Search destination")}</Imports.Typography>)}
               {data.focus ? (
@@ -225,7 +225,7 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
           <Imports.Divider orientation="vertical" variant="middle" flexItem sx={{ position: 'absolute', left: { xs: '615px', md: "600", lg: "560px", xl: "610px" }, transform: 'translateY(55%)', borderWidth: '1px', height: '25px', display: { xs: "none", lg: 'block' } }} />
           {data.monthsUi ? (
             <Imports.Grid item xs={4} sx={getBoxStyles(2)} onClick={(event) => { handleCheckIn(event); handleClick(2) }} onMouseEnter={() => setHoveredBox(2)} onMouseLeave={() => setHoveredBox(null)} >
-              <Imports.Grid sx={{ padding: '15px', borderRadius: '40px' }}>
+              <Imports.Grid sx={{ padding: '15px', borderRadius: '40px' ,cursor:"pointer"}}>
                 <Imports.Grid item sx={{ textAlign: 'start', paddingRight: '50px', paddingLeft: '10px', }} >
                   <Imports.Typography variant='body1' sx={{ color: '#000000', textTransform: 'none', fontSize: '11px' }}>When</Imports.Typography>
                   <Imports.Typography variant='caption' sx={{ color: '#000000', textTransform: 'none', fontSize: '12px', fontWeight: 'bold' }}> {data.monthStart} - {data.monthEnd}</Imports.Typography>
@@ -233,7 +233,7 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
               </Imports.Grid>
             </Imports.Grid>) : data.flexible ? (
               <Imports.Grid item xs={4} sx={getBoxStyles(2)} onClick={(event) => { handleCheckIn(event); handleClick(2) }} onMouseEnter={() => setHoveredBox(2)} onMouseLeave={() => setHoveredBox(null)} >
-                <Imports.Grid sx={{ padding: '18px', borderRadius: '40px', }}>
+                <Imports.Grid sx={{ padding: '18px', borderRadius: '40px', cursor:"pointer"}}>
                   <Imports.Grid item sx={{ textAlign: 'start', paddingRight: '50px', paddingLeft: '10px', }} >
                     <Imports.Typography variant='body1' sx={{ color: '#000000', textTransform: 'none', fontSize: '11px' }}>When</Imports.Typography>
                     <Imports.Typography variant='caption' sx={{ color: '#000000', textTransform: 'none', fontSize: '12px', fontWeight: 'bold' }}> Any {data.weekParam}</Imports.Typography>
@@ -244,7 +244,7 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
             (
               <Imports.Grid item xs={4} sm={5} md={5} lg={4} sx={{ justifyContent: 'center', display: 'flex', maxHeight: '80px' }} >
                 <Imports.Grid item xs={6} ref={buttonRef} sx={getBoxStyles(2)} onClick={(event) => { handleCheckIn(event); handleClick(2) }} onMouseEnter={() => setHoveredBox(2)} onMouseLeave={() => setHoveredBox(null)}>
-                  <Imports.Grid sx={{ padding: { xs: "16px", md: '14px' }, borderRadius: '40px', alignItems: 'center', }}>
+                  <Imports.Grid sx={{ padding: { xs: "16px", md: '14px' }, borderRadius: '40px', alignItems: 'center', cursor:"pointer"}}>
                     <Imports.Grid item sx={{ textAlign: 'start', paddingRight: '50px', paddingLeft: '10px', }} >
                       <Imports.Typography variant='body1' sx={{ color: '#000000', textTransform: 'none', fontSize: '11px' }}>Check in</Imports.Typography>
                       <Imports.Typography type='date' variant='caption' sx={{ color: '#000000', textTransform: 'none', fontSize: '10px', fontWeight: 'bold' }}> {data.startDate ? `${data.startDate}` : "Add dates"}</Imports.Typography>
@@ -253,7 +253,7 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
                 </Imports.Grid>
                 <Imports.Divider orientation="vertical" variant="middle" flexItem sx={{ position: 'absolute', transform: 'translateY(45%)', borderWidth: '1px', height: '25px', display: { xs: "none", lg: 'block' } }} />
                 <Imports.Grid item xs={6} sx={getBoxStyles(3)} onClick={(event) => { handleCheckIn(event); handleClick(3) }} onMouseEnter={() => setHoveredBox(3)} onMouseLeave={() => setHoveredBox(null)}>
-                  <Imports.Grid sx={{ padding: { xs: "16px", md: '14px' }, borderRadius: '40px', alignItems: 'center', }}>
+                  <Imports.Grid sx={{ padding: { xs: "16px", md: '14px' }, borderRadius: '40px', alignItems: 'center',cursor:"pointer" }}>
                     <Imports.Grid item sx={{ textAlign: 'start', paddingRight: '50px', paddingLeft: '10px', }} >
                       <Imports.Typography variant='body1' sx={{ color: '#000000', textTransform: 'none', fontSize: '10.8px' }}>Check out</Imports.Typography>
                       <Imports.Typography variant='caption' type='date' sx={{ color: '#000000', textTransform: 'none', fontSize: '10px', fontWeight: 'bold' }}> {data.endDate ? `${data.endDate}` : "Add dates"}</Imports.Typography>
@@ -283,9 +283,9 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
               </Imports.Grid>) : ("")}
             </Imports.Menu>
           )}
-          <Imports.Grid item xs={4} sm={3.5} md={4} ref={guestRef} sx={getBoxStyles(4)} onClick={(event) => { handleGuest(event); handleClick(4) }} onMouseEnter={() => setHoveredBox(4)} onMouseLeave={() => setHoveredBox(null)}>
-            <Imports.Grid item display='flex' alignItems='center' width='100%' justifyContent={'space-between'} sx={{ padding: { xs: '9px', sm: "10px", md: "8px", lg: "10px" }, borderRadius: '40px' }}>
-              <Imports.Grid item textAlign='start'>
+          <Imports.Grid item xs={4} sm={3.5} md={4}  sx={getBoxStyles(4)} onClick={() => { ; handleClick(4) }} onMouseEnter={() => setHoveredBox(4)} onMouseLeave={() => setHoveredBox(null)}>
+            <Imports.Grid item display='flex' alignItems='center' width='100%' justifyContent={'space-between'} sx={{ padding: { xs: '9px', sm: "10px", md: "8px", lg: "10px" }, borderRadius: '40px',cursor:"pointer" }}>
+              <Imports.Grid item textAlign='start' ref={guestRef} onClick={(event) =>{handleGuest(event)} }>
                 <Imports.Typography variant='body1' sx={{ color: '#000000', textTransform: 'none', fontSize: '11px' }}>Who</Imports.Typography>
                 <Imports.Typography variant='caption' sx={{ color: '#000000', textTransform: 'none', fontSize: '10px', fontWeight: 'bold' }}>{data.guestCount ? `${data.guestCount}  guests` : "Add guests"}</Imports.Typography>
               </Imports.Grid>
@@ -295,7 +295,7 @@ const MainNavbarComponent = React.memo(({  start, end, ghost,state, setSearch, h
                 </Imports.Grid>)
                 :
                 (<Imports.Grid item sx={{ padding: { xs: '9px', sm: "1px", md: "2px", lg: "0px" }, textAlign: 'end', paddingRight: '0px', paddingLeft: { sm: '80px', md: '130px', lg: '50px', xl: '130px' } }}>
-                  <Imports.SearchIcon fontSize='large' sx={{ backgroundColor: '#f73452', color: 'white', borderRadius: '50px', padding: '10px', marginTop: '5px' }} onClick={handleSearchNaviagte} />
+                  <Imports.SearchIcon fontSize='large' sx={{ backgroundColor: '#f73452', color: 'white', borderRadius: '50px', padding: '10px', marginTop: '5px' }}  />
                 </Imports.Grid>)}
             </Imports.Grid>
           </Imports.Grid>

@@ -15,7 +15,6 @@ const CalendersComponent = ({ selectionRange, handleSelect, isSmallScreen }) => 
           showMonthAndYearPickers={false}
           showMonthArrow={true}
           showDateDisplay={false}
-          colors={'red'}
           rangeColors={['black', 'lightgray']}
         />
       );

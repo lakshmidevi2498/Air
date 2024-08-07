@@ -16,9 +16,12 @@ const ProductSwiper = () => {
       const productsData = useSelector((state) => state.getproductsdatareducer.data || []);
        console.log("productsData", productsData);
        useEffect(() => {
-           dispatch(getProductsDataInitiate());
-               setLoading(false);         
-       }, [dispatch]);
+        const fetchData = async () => {
+            await dispatch(getProductsDataInitiate());
+            setLoading(false); // Set loading to false after data is fetched
+        };
+        fetchData();
+    }, [dispatch]);
    
        if (loading) {
         return (

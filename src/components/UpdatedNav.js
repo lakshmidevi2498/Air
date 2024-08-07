@@ -148,8 +148,8 @@ const memoizedHandlers = useMemo(() => ({  setRegion, handleMonths, handleWeekPa
       <Imports.Grid container sx={{ justifyContent: "center", borderBottom: "1px solid lightgray", top: '0', position: 'sticky', zIndex: 10, }} >
         <Imports.Grid item sx={{padding: { xs: '10px', md: '20px' }, backgroundColor: theme.palette.one.main, }} xs={12}>
           <Imports.Grid container sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingX: { xs: '10px', md: '50px', lg: "60px" }, height: '50%', display: { xs: 'none', sm: 'flex', md: 'flex' }, }}>
-            <Imports.Grid item>
-              <Imports.ImageListItem sx={{ width: '100px', height: '50px', }}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png" onClick={handleHome} /></Imports.ImageListItem>
+            <Imports.Grid item sx={{cursor:"pointer"}} onClick={handleHome}>
+              <Imports.ImageListItem sx={{ width: '100px', height: '50px', }}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png"  /></Imports.ImageListItem>
               <Imports.Grid display='flex'>  </Imports.Grid>
             </Imports.Grid>
             {!isScrolled ? (
