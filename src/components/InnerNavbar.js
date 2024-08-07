@@ -19,11 +19,7 @@ navigate("/")
                             <Imports.Box
                                 component="img"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png"
-<<<<<<< HEAD
-                                sx={{ width: "100%", height: "100%" }} 
-=======
-                                sx={{ width: "100%", height: "100%" }} onClick={handleHome}
->>>>>>> 424d4cfde804ff63ca856875cf985d584dbde680
+                                sx={{ width: "100%", height: "100%" }}  onClick={handleHome}
                             />
                         </Imports.Grid>
                         <Imports.Grid item xs={4} md={5} lg={4} sx={{ display: "flex", justifyContent: "center", textAlign: "center", alignItems: "center", marginLeft: { xs: "0px", lg: "150px", xl: "150px", xxl: "0px" } }}>
