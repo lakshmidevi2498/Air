@@ -15,11 +15,11 @@ navigate("/")
             <Imports.Grid container sx={{ justifyContent: "center", display: { xs: "none", sm: "block" }, top: 0, position: "sticky", zIndex: 50, backgroundColor: "white" }}>
                 <Imports.Grid item xs={12} sm={11} md={10} lg={10} sx={{ margin: "auto", paddingX: { sm: "0px", md: "0px", lg: "30px", xl: "20px" }, paddingY: "20px" }}>
                     <Imports.Grid container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                        <Imports.Grid item xs={2} md={1} sx={{ textAlign: "left", width: "100px", height: "30px", alignItems: "center", marginTop: "5px" ,cursor:"pointer"}} onClick={handleHome}>
+                        <Imports.Grid item xs={2} md={1} sx={{ textAlign: "left", width: "100px", height: "30px", alignItems: "center", marginTop: "5px" }}>
                             <Imports.Box
                                 component="img"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png"
-                                sx={{ width: "100%", height: "100%" }}  onClick={handleHome}
+                                sx={{ width: "100%", height: "100%" }} onClick={handleHome}
                             />
                         </Imports.Grid>
                         <Imports.Grid item xs={4} md={5} lg={4} sx={{ display: "flex", justifyContent: "center", textAlign: "center", alignItems: "center", marginLeft: { xs: "0px", lg: "150px", xl: "150px", xxl: "0px" } }}>

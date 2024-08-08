@@ -1,4 +1,4 @@
-import React ,{useState , useEffect}from 'react';
+import React from 'react';
 import Imports from '../commons/AllImports';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
@@ -8,36 +8,28 @@ import InnerSubComponent from './InnerSubComponent';
 import InnerSubTwoComponent from "./InnerSubTwoComponent"
 import InnerCalenderComponent from './InnerCalenderComponent';
 import InnerCardComponent from './InnerCardComponent';
-import CircularProgress from '@mui/material/CircularProgress';
+import { Grid, Box, Button } from '@mui/material';
+import GridOnSharpIcon from '@mui/icons-material/GridOnSharp';
 
 export const InnerComponenetOne = () => {
-    const [loading, setLoading] = useState(true);
-    const location = useLocation();
-    console.log("location", location);
-    console.log("locationinnerimgs---->", location.state.innerImgs)
-    console.log("locationinnerimgs0---->", location.state.showall)
-    const allImages = location.state.showall || [];
-    const innerImgs = location.state?.innerImgs || [];
 
     const navigate = useNavigate();
-   
-    useEffect(() => {
-        if (innerImgs.length > 0) {
-            setLoading(false);
-        }
-    }, [innerImgs]);
+    const handleAllImages = () => {
+        navigate('/allimages', { state: { allImages, innerImgs } })
+        console.log("allImagesin handleAllImages", allImages)
+    }
     const handleProducts = () => {
         navigate("/products")
     }
     const handleHomePage = () => {
         navigate('/')
     }
- 
-
-    const handleAllImages = () => {
-        navigate('/allimages', { state: { allImages, innerImgs } })
-        console.log("allImagesin handleAllImages", allImages)
-    }
+    const location = useLocation();
+    console.log("location", location);
+    console.log("locationinnerimgs---->", location.state.innerImgs)
+    console.log("locationinnerimgs0---->", location.state.showall)
+    const allImages = location.state.showall || [];
+    const innerImgs = location.state?.innerImgs || [];
     if (!innerImgs.length) {
         return <div>No images available</div>;
 
@@ -48,13 +40,6 @@ export const InnerComponenetOne = () => {
         { src: location.state.innerImgs[3].src, borderRadius: '10px 0 0 0' },
         { src: location.state.innerImgs[4].src, borderRadius: '0 10px 0 0' }
     ];
-    if (loading) {
-        return (
-            <Imports.Grid container justifyContent="center" alignItems="center" sx={{ minHeight: '100vh' }}>
-                <CircularProgress />
-            </Imports.Grid>
-        );
-    }
 
     return (
 
@@ -96,7 +81,7 @@ export const InnerComponenetOne = () => {
                                                     height: '207px'
                                                 }}
                                             >
-                                                <Imports.Box
+                                                <Box
                                                     component="img"
                                                     src={image.src}
                                                     sx={{
@@ -119,7 +104,7 @@ export const InnerComponenetOne = () => {
                                                 }}
                                                 className="image-container"
                                             >
-                                                <Imports.Box
+                                                <Box
                                                     component="img"
                                                     className="hover-image"
                                                     src={image.src}

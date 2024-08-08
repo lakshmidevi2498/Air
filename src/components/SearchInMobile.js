@@ -56,7 +56,9 @@ const SearchInMobile = React.memo(({  setSelectedItem}) => {
     setData(prevState => ({
       ...prevState,
       countryMenu: !prevState.countryMenu,
-      accordain1: !prevState.accordain1, 
+      accordain1: !prevState.accordain1,
+      // when: true,
+      // who: true,
     }));
   };
 

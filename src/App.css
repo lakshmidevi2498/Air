@@ -64,6 +64,12 @@
   border-bottom: 2px solid black;
 }
 
+/* .vertical-divider {
+  width: 1px;
+  height: 50px;
+  background-color: lightgray;
+  margin: auto 0;
+} */
 
 .image-container {
   position: relative;
@@ -72,8 +78,8 @@
 
 .hover-image {
   display: block;
-  width: 100%; 
-  height: auto; 
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
 }
 
 .overlay {
@@ -82,12 +88,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0); /* Initially transparent */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 .image-container:hover .overlay {
-  background-color: rgba(0, 0, 0, 0.3); 
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust the opacity as needed */
 }
 .calender {
   max-width: 100%;
@@ -97,6 +103,7 @@
 .sticky-container {
   position: sticky; 
   top: 90px; 
+  /* z-index: 40; */
   display: flex;
   justify-content: center;
   height: 70px;
@@ -105,6 +112,7 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   align-items: center;
   text-align: center;
+  /* border:"1px solid lightgray" */
 }
 
 
@@ -114,6 +122,16 @@
   padding-inline: 20px;
   background-color: white;
 }
+
+
+
+
+
+
+
+
+
+ 
 .card {
   position: relative;
 }
@@ -127,10 +145,18 @@
 .card:hover .nextbtn {
   display: flex;
 }
-/* .dropdown{
-  z-index: 120 !important;
-  border:"2x solid red"
-} */
+
+
+
+
+
+
+
+
+
+
+
+
 
  @media only screen and (max-width: 1441px){
   .sticky-container  {

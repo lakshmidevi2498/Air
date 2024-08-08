@@ -1,9 +1,16 @@
 import REACT, { useState } from 'react';
 import Imports from '../commons/AllImports';
+import { Divider, ListItem, Typography } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { ChevronLeft, ChevronRight, ImageOutlined, LanguageIcon } from '@mui/icons-material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const FooterComponent = () => {
     const [open, SetOpen] = useState(false)
@@ -49,9 +56,9 @@ const FooterComponent = () => {
         'Company Details'
       ];
       const socialIcons = [
-        { component: <Imports.TwitterIcon />, key: 'twitter' },
-        { component: <Imports.FacebookIcon />, key: 'facebook' },
-        { component: <Imports.InstagramIcon />, key: 'instagram' }
+        { component: <TwitterIcon />, key: 'twitter' },
+        { component: <FacebookIcon />, key: 'facebook' },
+        { component: <InstagramIcon />, key: 'instagram' }
       ];
 
 
@@ -66,11 +73,11 @@ const FooterComponent = () => {
     return (
         <>
             <Imports.Grid container item justifyContent='center' xs={12} backgroundColor='#ededed'pt={5}>
-                <Imports.Grid item xs={12}  justifyContent='center' >
-                    <Imports.Grid item  xs={11}sx={{justifyContent:"center",margin:"auto",}}>
-                        <Imports.Typography variant='foot' sx={{fontSize:{xs:"15px",sm:"20px"}}}>Inspiration for future gateways</Imports.Typography>
+                <Imports.Grid item xs={11}>
+                    <Imports.Grid item sx={{}} >
+                        <Imports.Typography variant='foot'>Inspiration for future gateways</Imports.Typography>
                     </Imports.Grid>
-                    <Imports.Grid item  sx={{ fontWeight: 'normal',display:'flex',justifyContent:"start",paddingInlineStart:{xs:"30px",sm:"70px",md:"70px",lg:"100px"} }} xs={11} md={7}>
+                    <Imports.Grid item  sx={{ fontWeight: 'normal',display:'flex' }} xs={12} md={8}>
                         <Swiper
                             spaceBetween={0}
                             navigation={{
@@ -96,12 +103,11 @@ const FooterComponent = () => {
                             </Swiper>
                             
                     </Imports.Grid>
-                    <Imports.Divider orientation="horizontal" variant="middle" flexItem />
-                    <Imports.Grid xs={11} container item sx={{justifyContent:"center",margin:"auto"}}>
-                    <Imports.Grid container item xs={12}   sx={{textAlign:"center",paddingY:"10px",margin:"auto",justifyContent:"Center"}}>
-                        {/* <Imports.Grid item ></Imports.Grid> */}
+                    <Divider orientation="horizontal" variant="middle" flexItem />
+                    <Imports.Grid container item xs={12}  padding='20px'>
+                        <Imports.Grid item ></Imports.Grid>
                         {footerContent.map((item, index) => (
-                            <Imports.Grid item xs={6} sm={4} md={2} lg={2} key={index} sx={{ paddingRight: 2, paddingBottom: 2 ,}}>
+                            <Imports.Grid item xs={6} sm={4} md={2} lg={2} key={index} sx={{ paddingRight: 2, paddingBottom: 2 }}>
                                 <Imports.Grid container direction="column" >
                                     <Imports.Typography variant='body2' sx={{ fontFamily: 'inherit' }}>{item.body2}</Imports.Typography>
                                     <Imports.Typography variant='caption' fontSize='14px'>{item.caption}</Imports.Typography>
@@ -109,43 +115,38 @@ const FooterComponent = () => {
                                 </Imports.Grid>
                             </Imports.Grid>
                         ))}
-                        </Imports.Grid>
                         {showMoreVisible && (
                             <>
                            
-                            <Imports.Grid item onClick={handleShowMore} display='flex' sx={{textAlign:"left",justifyContent:"start",marginLeft:{xs:"30px",sm:"60px",md:"20px",lg:" 60px"},}} xs={12}>
+                            <Imports.Grid item onClick={handleShowMore} display='flex'>
                                 <Imports.Typography variant='body2'>Show More</Imports.Typography>
-                                <Imports.KeyboardArrowDownIcon />
+                                <KeyboardArrowDownIcon />
                             </Imports.Grid>
                             
                             </>
                         )}
                         {open && (
-                            <>
-                            <Imports.Grid container sx={{textAlign:"center",paddingY:"10px",margin:"auto",justifyContent:"Center"}}item  xs={12} >
+                            <Imports.Grid container >
                                 {footerRemain.map((item, index) => (
-                                    <Imports.Grid item xs={6} sm={4} md={2} lg={2} key={index} sx={{ textAlign:"center",paddingRight: 2, paddingBottom: 2 ,}}>
-                                        <Imports.Grid container direction="column" >
+                                    <Imports.Grid item xs={6} sm={4} md={2} lg={2} key={index} sx={{ paddingRight: 2, paddingBottom: 2 }}>
+                                        <Imports.Grid container direction="column">
                                             <Imports.Typography variant='body2' sx={{ fontWeight: 'bold' }}>{item.body}</Imports.Typography>
                                             <Imports.Typography variant='caption'>{item.caption}</Imports.Typography>
                                         </Imports.Grid>
                                     </Imports.Grid>
                                 ))}
-                                
+                                <Imports.Grid onClick={handleShowLess} display='flex'>
+                                    <Imports.Typography variant='body2'>Show less</Imports.Typography>
+                                    <KeyboardArrowUpIcon />
+                                </Imports.Grid>
                             </Imports.Grid>
-                            <Imports.Grid onClick={handleShowLess} display='flex'  sx={{textAlign:"left",justifyContent:"start",marginLeft:{xs:"30px",sm:"60px",md:"0px",lg:" 0px"},}} xs={11}>
-                            <Imports.Typography variant='body2' >Show less</Imports.Typography>
-                            <Imports.KeyboardArrowUpIcon />
-                        </Imports.Grid>
-                        </>
                         )}
-                    {/* </Imports.Grid> */}
                     </Imports.Grid>
-                    <Imports.Divider orientation="horizontal" variant="middle" flexItem />
+                    <Divider orientation="horizontal" variant="middle" flexItem />
                     <Imports.Grid container my={2}>
-                        <Imports.Grid container  paddingY='20px' sx={{display:"flex",justifyContent:"center" ,}}>
+                        <Imports.Grid container display='flex' padding='20px' >
                             {footersupport.map((subArray, index) => (
-                            <Imports.Grid item container key={index} display='block' xs={12} sm={4} md={4} sx={{textAlign:"center"}}>
+                            <Imports.Grid item container key={index} display='block' xs={12} sm={6} md={4}>
                                 {subArray.map((item, subIndex) => (
                                 <Imports.Typography
                                     variant='body2'
@@ -161,8 +162,8 @@ const FooterComponent = () => {
                         </Imports.Grid>
                         </Imports.Grid>
 
-                    <Imports.Divider orientation="horizontal" variant="middle" flexItem />
-                    <Imports.Grid container sx={{ justifyContent: { xs: 'center', md: 'space-between' } ,margin:"auto",paddingY:"20px",}} my={2} item xs={11}>
+                    <Divider orientation="horizontal" variant="middle" flexItem />
+                    <Imports.Grid container sx={{ justifyContent: { xs: 'center', md: 'space-between' } ,padding:{xs:'10px',sm:'0px'}}} my={2}>
                     <Imports.Grid   item gap={1}   display='flex'  flexDirection={{ xs: 'column', md: 'row' }}   alignItems={{ xs: 'center', md: 'flex-start' }} xs={12} sm={6}    md={6}  sx={{ order: { xs: 2, md: 1 }, }}  >
                         {footerLinks.map((item ,index) => (
                         <Imports.Typography variant='caption1'fontWeight='normal' key={index}>{item}</Imports.Typography>

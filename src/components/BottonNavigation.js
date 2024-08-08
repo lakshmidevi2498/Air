@@ -11,7 +11,7 @@ const BottonNavigation = () => {
 
 
     return (
-      <Imports.Box sx={{ width: '100%' ,display:{xs:'block',sm:'none'},position: 'fixed', bottom: 0, left: 0, right: 0 ,zIndex:10}}>
+      <Imports.Box sx={{ width: '100%' ,display:{xs:'block',sm:'none'},position: 'fixed', bottom: 0, left: 0, right: 0 }}>
         <Imports.BottomNavigation
           showLabels
           value={value}

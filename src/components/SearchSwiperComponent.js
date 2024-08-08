@@ -61,7 +61,7 @@ const SearchSwiperComponent = ({filteredData}) => {
                                                 <SwiperSlide key={innerIndex} sx={{}}>
                                                     <Imports.Grid container justifyContent='center' sx={{ position: 'relative', }} >
                                                         <Imports.CardMedia
-                                                            component="img" height="250"  image={innerItem.img}  alt="Image Title" style={{ zIndex:2,borderRadius: '10px', width: '100%', borderBottom: index === activeIndex ? '2px solid black' : 'none'}}  onClick={() => handleImageClick(index)}  />
+                                                            component="img" height="250"  image={innerItem.img}  alt="Image Title" style={{ borderRadius: '10px', width: '100%', borderBottom: index === activeIndex ? '2px solid black' : 'none'}}  onClick={() => handleImageClick(index)}  />
                                                         <Imports.Grid className={`custom-prev-${index} prevbtn`} style={{ cursor: 'pointer', alignItems: 'center',  color: 'black',  position: 'absolute',  top: '120px', left: '10px',   zIndex: 10,  backgroundColor: 'white',  borderRadius: '50%',  paddingY: '2px',  paddingX: '1px'  }}>
                                                             <Imports.ChevronLeft />
                                                         </Imports.Grid>
